@@ -5,7 +5,10 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by LaunchCode
@@ -14,8 +17,6 @@ public class JobData {
 
     private static final String DATA_FILE = "src/main/resources/job_data.csv";
     private static boolean isDataLoaded = false;
-
-
 
     private static ArrayList<HashMap<String, String>> allJobs;
 
@@ -71,7 +72,7 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
+// store job entries that match the search criteria.
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
