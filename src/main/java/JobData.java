@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 /**
  * Created by LaunchCode
  */
@@ -41,10 +41,6 @@ public class JobData {
                 values.add(aValue);
             }
         }
-
-        // Bonus mission: sort the results
-        Collections.sort(values);
-
         return values;
     }
 
@@ -52,9 +48,6 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
-        // Bonus mission; normal version returns allJobs
-        return new ArrayList<>(allJobs);
     }
 
     /**
@@ -81,7 +74,6 @@ public class JobData {
             value = value.toLowerCase();
             if (aValue.contains(value)) {
                 jobs.add(row);
-
             }
         }
         return jobs;
